@@ -1,0 +1,4 @@
+DT_COMPAT_ZMK_JOYSTICK := zmk,joystick
+config ZMK_JOYSTICK
+		bool
+		default $(dt_compat_enabled,$(DT_COMPAT_ZMK_JOYSTICK))
