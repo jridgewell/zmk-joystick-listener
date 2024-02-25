@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define DT_DRV_COMPAT zmk_joystick
+#define DT_DRV_COMPAT zmk_joystick_listener
 
 #include <zephyr/device.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>

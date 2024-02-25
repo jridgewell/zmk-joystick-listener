@@ -4,7 +4,7 @@
 description: |
   Listener to subscribe to input events and send HID updates after processing
 
-compatible: "zmk,joystick"
+compatible: "zmk,joystick-listener"
 
 properties:
   device:
