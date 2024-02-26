@@ -3,3 +3,4 @@ config ZMK_JOYSTICK_LISTENER
 		bool
 		default $(dt_compat_enabled,$(DT_COMPAT_ZMK_JOYSTICK_LISTENER))
     select INPUT
+		select ZMK_JOYSTICK

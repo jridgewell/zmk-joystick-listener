@@ -11,6 +11,8 @@
 #include <zephyr/input/input.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <zmk/endpoints.h>
+#include <zmk/hid.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 struct joystick_data {
@@ -33,8 +35,8 @@ static void input_handler(struct joystick_data *data, struct input_event *evt) {
   }
 
   if (evt->sync) {
-    // TODO: send report
-    // LOG_DBG("Sending x: %d, y: %d", data->x, data->y);
+    zmk_hid_joystick_set((int8_t)data->x, (int8_t)data->y, 0);
+    zmk_endpoints_send_joystick_report();
   }
 }
 
